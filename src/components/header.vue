@@ -8,7 +8,7 @@
                 </button>
                 <div>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model="searchImput" >
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model.trim="searchImput" @search="$emit('select' , searchImput)">
                         <button class="btn btn-outline-danger" type="submit">Search</button>
                     </form>
                 </div>

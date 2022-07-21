@@ -8,6 +8,7 @@
 <script>
 import headerContent from './components/header.vue'
 import mainContent from './components/main.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',

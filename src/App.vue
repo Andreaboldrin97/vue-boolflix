@@ -25,7 +25,9 @@ export default {
           apiLink : 'https://api.themoviedb.org/3/search/',
           movie : 'movie',
           titleSearch : '',
-          filmContent : []
+          filmContent : [],
+          
+          
 
       }
   },
@@ -34,8 +36,7 @@ export default {
             axios.get(`${this.apiLink}${this.movie}${this.apiKey}${this.titleSearch}`)
             .then((element) =>{
               this.filmContent = element.data.results
-             
-              console.log(`TITOLO =${this.filmsTitle}... TIOLO ORIGINALE=${this.originalTitleFilm}...LINGUA=${this.originalLanguageFilm}..VOTO=${this.filmVote} .....`)
+            
             })
             .catch((error) => {
               console.warn(error)

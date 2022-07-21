@@ -18,7 +18,8 @@ export default {
     },
     props:{
         filmContent : Array,
-    }
+    },
+   
 }
 </script>
 

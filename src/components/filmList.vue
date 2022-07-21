@@ -1,17 +1,17 @@
 <template>
     <div>
         listFilm
-        <cardFilm />
+        <!-- <cardFilm /> -->
     </div>
 </template>
 
 <script>
-import cardFilm from '../components/cardFilm.vue' 
+// import cardFilm from '../components/cardFilm.vue'
 
 export default {
-    components : {
-        cardFilm
-    }
+    // components : {
+    //     cardFilm
+    // }
 }
 </script>
 

@@ -3,13 +3,13 @@
         <nav class="navbar navbar-expand-lg bg-dark px-5 py-3">
             <div class="container-fluid">
                 <a class="navbar-brand text-danger" href="#">BOOLFIX</a>
-                <button class="navbar-toggler">
+                <!-- <button class="navbar-toggler">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button> -->
                 <div>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model.trim="searchImput" @search="$emit('select' , searchImput)">
-                        <button class="btn btn-outline-danger" type="submit">Search</button>
+                        <input class="form-control me-2" placeholder="Search" v-model.trim="searchInput" @keyup="$emit('search' , searchInput)">
+                        <button @click.prevent="log(searchInput)" class="btn btn-outline-danger" type="submit">Search</button>
                     </form>
                 </div>
             </div>
@@ -21,7 +21,12 @@
 export default {
     data : function(){
         return{
-            searchImput : '',
+            searchInput : '',
+        }
+    },
+    methods :{
+        log : function(element){
+            console.log(element)
         }
     }
 

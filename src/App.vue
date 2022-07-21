@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <headerContent @search="titleFilmSearch"/>
-    <mainContent />
+    <mainContent 
+      :filmContent="filmContent"
+    />
   </div>
 </template>
 
@@ -23,10 +25,7 @@ export default {
           apiLink : 'https://api.themoviedb.org/3/search/',
           movie : 'movie',
           titleSearch : '',
-          filmTitle : [] ,
-          originalTitleFilm : [],
-          originalLanguageFilm : [],
-          filmVote : []
+          filmContent : []
 
       }
   },
@@ -34,13 +33,7 @@ export default {
        getFilm : function(){
             axios.get(`${this.apiLink}${this.movie}${this.apiKey}${this.titleSearch}`)
             .then((element) =>{
-
-              for(let i = 0 ; i < element.data.results.length; i++){
-                  this.filmsTitle += element.data.results[i].title;
-                  this.originalTitleFilm += element.data.results[i].original_title;
-                  this.originalLanguageFilm +=element.data.results[i].original_language;
-                  this.filmVote += element.data.results[i].vote_average;
-              }
+              this.filmContent = element.data.results
              
               console.log(`TITOLO =${this.filmsTitle}... TIOLO ORIGINALE=${this.originalTitleFilm}...LINGUA=${this.originalLanguageFilm}..VOTO=${this.filmVote} .....`)
             })

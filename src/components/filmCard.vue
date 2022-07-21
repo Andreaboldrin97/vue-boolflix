@@ -3,7 +3,7 @@
         <ul>
             <li>{{ filmTitle }}</li>
             <li> {{ originalTitleFilm }}</li>
-            <li><img :src="visualLanguage(originalLanguageFilm)" alt=""></li>
+            <li class="img-language"><img :src="require(`../assets/flag-${visualLanguage(originalLanguageFilm)}`)" alt=""></li>
             <li>{{ filmVote }}</li>
         </ul>
     </div>
@@ -26,7 +26,7 @@ export default {
     methods : {
         visualLanguage : function(langauge){
             if(this.filmLanguage.includes(langauge)){
-                return `../assets/flag-${langauge}.png`
+                return `${langauge}.png`
             }else{
                 return langauge
             }
@@ -35,6 +35,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.img-language{
+   img{
+       width: 20px;
+       height: 20px;
+   }
+}
 
 </style>

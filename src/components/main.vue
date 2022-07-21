@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import filmList from './components/filmList.vue' 
+import filmList from '../components/filmList.vue' 
 
 export default {
     components :{

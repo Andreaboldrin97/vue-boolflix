@@ -25,7 +25,8 @@ export default {
           titleSearch : '',
           filmTitle : [] ,
           originalTitleFilm : [],
-          originalLanguageFilm : []
+          originalLanguageFilm : [],
+          filmVote : []
 
       }
   },
@@ -33,10 +34,18 @@ export default {
        getFilm : function(){
             axios.get(`${this.apiLink}${this.movie}${this.apiKey}${this.titleSearch}`)
             .then((element) =>{
-              this.filmsTitle = element.data.results.title;
-              this.originalTitleFilm = element.data.results.original_title;
-              this.originalLanguageFilm = element.data.results.original_language;
-              console.log(`${this.filmsTitle} ...... ${this.originalTitleFilm} .....${this.originalLanguageFilm}`)
+
+              for(let i = 0 ; i < element.data.results.length; i++){
+                  this.filmsTitle += element.data.results[i].title;
+                  this.originalTitleFilm += element.data.results[i].original_title;
+                  this.originalLanguageFilm +=element.data.results[i].original_language;
+                  this.filmVote += element.data.results[i].vote_average;
+              }
+             
+              console.log(`TITOLO =${this.filmsTitle}... TIOLO ORIGINALE=${this.originalTitleFilm}...LINGUA=${this.originalLanguageFilm}..VOTO=${this.filmVote} .....`)
+            })
+            .catch((error) => {
+              console.warn(error)
             })
        },
        titleFilmSearch : function(needle){

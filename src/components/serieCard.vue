@@ -1,10 +1,10 @@
 <template>
     <div>
         <ul>
-            <li>{{ filmTitle }}</li>
-            <li> {{ originalTitleFilm }}</li>
-            <li class="img-language"><img :src="require(`../assets/flag-${visualLanguage(originalLanguageFilm)}`)" alt=""></li>
-            <li>{{ filmVote }}</li>
+            <li>{{  serieTitle }}</li>
+            <li>{{serieOriginalTitle}}</li>
+            <li class="img-language"><img :src="require(`../assets/flag-${visualLanguage(serieOriginalLanguage)}`)" alt=""></li>
+            <li>{{ serieVote }}</li>
         </ul>
     </div>
 </template>
@@ -13,10 +13,10 @@
 export default {
     
     props : {
-        filmTitle : String,
-        originalTitleFilm : String,
-        originalLanguageFilm : String,
-        filmVote : [String,Number],
+        serieTitle : String,
+        serieOriginalTitle : String,
+        serieOriginalLanguage: String,
+        serieVote : [String,Number]
     },
      data : function(){
         return{

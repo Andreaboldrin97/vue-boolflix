@@ -3,6 +3,7 @@
     <headerContent @search="titleFilmSearch"/>
     <mainContent 
       :filmContent="filmContent"
+      :seriesTVContent="seriesTVContent"
     />
   </div>
 </template>
@@ -24,8 +25,10 @@ export default {
           apiKey : '?api_key=3b41601b192f01bf36adb6163387f7eb',
           apiLink : 'https://api.themoviedb.org/3/search/',
           movie : 'movie',
+          seriesTv : 'tv',
           titleSearch : '',
           filmContent : [],
+          seriesTVContent : [],
           
           
 
@@ -42,15 +45,23 @@ export default {
               console.warn(error)
             })
        },
+       getSerie : function(){
+            axios.get(`${this.apiLink}${this.seriesTv}${this.apiKey}${this.titleSearch}`)
+            .then((element) =>{
+              this.seriesTVContent = element.data.results
+            
+            })
+            .catch((error) => {
+              console.warn(error)
+            })
+       },
        titleFilmSearch : function(needle){
          console.log(needle)
          this.titleSearch = `&query=${needle}`;
-         this.getFilm()
-         console.log(`${this.apiLink}${this.movie}${this.apiKey}${this.titleSearch}`)
+         this.getFilm();
+         this.getSerie()
+         console.log(`${this.apiLink}${this.seriesTv}${this.apiKey}${this.titleSearch}`)
        }
-  },
-  created(){
-    this.titleFilmSearch()
   }
 }
 </script>

@@ -7,10 +7,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button> -->
                 <div>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" placeholder="Search" v-model.trim="searchInput" @keyup.enter="$emit('search' , searchInput)">
-                        <button @click.prevent="" class="btn btn-outline-danger" type="submit">Search</button>
-                    </form>
+                    <input class="form-control me-2" placeholder="Search" v-model.trim="searchInput" @keyup.enter="$emit('search' , searchInput)">
+                    <button @click.prevent="" class="btn btn-outline-danger">Search</button>
                 </div>
             </div>
         </nav>

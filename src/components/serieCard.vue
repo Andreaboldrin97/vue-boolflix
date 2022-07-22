@@ -1,13 +1,14 @@
 <template>
     <section class="m-3">
-        <div>
-            <div>
-                <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342${posterPath}`" alt="">
+        <div class="position-relative card-container">
+            <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342${posterPath}`" alt="">
+            <div class="position-absolute top-0 card-info p-3">
+                <div> Titolo :{{  serieTitle }}</div>
+                <div>Titolo originale :{{serieOriginalTitle}}</div>
+                <div class="img-language">Lingua originale :<img :src="require(`../assets/flag-${visualLanguage(serieOriginalLanguage)}`)" :alt="serieOriginalLanguage"></div>
+                <div>Voto :{{ rating(serieVote) }}</div>
+                <div><div>Trama : {{ seriesStoryline }}</div></div>
             </div>
-            <div>{{  serieTitle }}</div>
-            <div>{{serieOriginalTitle}}</div>
-            <div class="img-language"><img :src="require(`../assets/flag-${visualLanguage(serieOriginalLanguage)}`)" :alt="serieOriginalLanguage"></div>
-            <div>{{ rating(serieVote) }}</div>
         </div>
     </section>
 </template>
@@ -20,6 +21,7 @@ export default {
         serieOriginalTitle : String,
         serieOriginalLanguage: String,
         posterPath : String,
+        seriesStoryline : String,
         serieVote : [String,Number]
     },
      data : function(){
@@ -53,6 +55,17 @@ export default {
        object-fit: cover;
        object-position: center;
    }
+}
+.card-info{
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+    display: none;
+}
+.card-container:hover .card-info{
+    display: block;
+    background-color: black;
+    color: white;
 }
 
 </style>

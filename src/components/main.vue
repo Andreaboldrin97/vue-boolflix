@@ -9,6 +9,7 @@
                     :originalTitle="element.original_title"
                     :originalLanguageFilm="element.original_language"
                     :filmVote="element.vote_average"
+                    :storyline="element.overview"
                     />
             </div>
         </div>
@@ -21,6 +22,7 @@
                     :serieOriginalTitle="series.original_name"
                     :serieOriginalLanguage="series.original_language"
                     :serieVote="series.vote_average"
+                    :seriesStoryline="series.overview"
                     />
            </div>
        </div>

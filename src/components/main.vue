@@ -1,8 +1,8 @@
 <template>
-    <div class="container-fluid px-5 py-3">
-        <div >
+    <div class="container-fluid px-5 py-3 container-posters">
+        <div>
             <h4>FILM</h4>
-            <div class="row row-cols-5 ">
+            <div class="row row-cols-4 ">
                 <filmCard v-for="(element , index) in filmContent" :key="index"
                     :filmPoster="element.poster_path"
                     :filmTitle="element.title"
@@ -15,7 +15,7 @@
         </div>
        <div>
            <h4>SERIE TV</h4>
-           <div class="row row-cols-5">
+           <div class="row row-cols-4">
                 <serieCard v-for="(series, index ) in seriesTVContent" :key="index"
                     :posterPath="series.poster_path"
                     :serieTitle="series.name"
@@ -48,5 +48,9 @@ export default {
 </script>
 
 <style lang="scss">
+.container-posters{
+    height: calc(100vh - 88px);
+    overflow: auto;
+}
 
 </style>

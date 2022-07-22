@@ -2,10 +2,9 @@
     <header>
         <nav class="bg-dark px-5 py-3 d-flex">
             <div class="pe-4 navbar navbar-dark">
-                <button class="navbar-toggler " type="button">
+                <button class="navbar-toggler " type="button" @click="$emit('isNavOpen' , true)">
                     <span class="navbar-toggler-icon btn-nav"></span>
                 </button>
-                
             </div>
             <div class="d-flex justify-content-between w-100 align-items-center">
                     <a class="navbar-brand text-danger" href="#">BOOLFIX</a>

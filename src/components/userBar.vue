@@ -1,5 +1,5 @@
 <template>
-    <div class="nav-user-content bg-dark text-white">
+    <div class="nav-user-content bg-dark text-white" :class="navIsOpen  ? 'd-block' : 'd-none'">
             <div class="user-profile p-3 d-flex align-items-center border-bottom">
             <img src="../assets/my-img.jpeg" alt="">
             <div class="ps-5">
@@ -51,8 +51,11 @@ export default {
                 'Anime',
                 'Film crime',
                 'Documentari'
-            ]
-        }
+            ],
+        }  
+    },
+    props :{
+        navIsOpen : Boolean,
     }
 
 }

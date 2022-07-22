@@ -48,10 +48,9 @@ export default {
             }
         },
         rating : function(vote){
-            let star = '⭐'
             let ratings= Math.round( vote / 2) 
-            const stars = star.repeat(ratings)
-            return stars
+            return '⭐'.repeat(ratings)
+            
         }
     }
 }

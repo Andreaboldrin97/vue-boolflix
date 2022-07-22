@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <headerContent @search="titleFilmSearch"/>
+    <headerContent @search="titleFilmSearch" @isNavOpen="openNav"/>
     <div class="d-flex">
-    <userBar />
+    <userBar :navIsOpen="navIsOpen"/>
     <mainContent 
       :filmContent="filmContent"
       :seriesTVContent="seriesTVContent"
@@ -34,7 +34,7 @@ export default {
           titleSearch : '',
           filmContent : [],
           seriesTVContent : [],
-          
+          navIsOpen : false
           
 
       }
@@ -66,6 +66,9 @@ export default {
          this.getFilm();
          this.getSerie()
          console.log(`${this.apiLink}${this.seriesTv}${this.apiKey}${this.titleSearch}`)
+       },
+       openNav : function(needle){
+         return this.navIsOpen = needle
        }
   }
 }

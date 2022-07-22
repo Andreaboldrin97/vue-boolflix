@@ -3,7 +3,7 @@
     <headerContent @search="titleFilmSearch" @isNavOpen="openNav"/>
     <div class="d-flex">
     <userBar :navIsOpen="navIsOpen"/>
-    <mainContent 
+    <mainContent @isNavOpen="openNav"
       :filmContent="filmContent"
       :seriesTVContent="seriesTVContent"
     />

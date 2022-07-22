@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid px-5 py-3 container-posters">
+    <main class="container-fluid px-5 py-3 container-posters" @mouseover="$emit('isNavOpen' , false)">
         <div>
             <h4>FILM</h4>
             <div class="row row-cols-4 ">
@@ -27,7 +27,7 @@
            </div>
        </div>
         
-    </div>
+    </main>
 </template>
 
 <script>

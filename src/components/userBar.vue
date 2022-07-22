@@ -1,5 +1,5 @@
 <template>
-    <div class="nav-user-content bg-dark text-white" :class="navIsOpen  ? 'd-block' : 'd-none'">
+    <div class="nav-user-content bg-dark text-white position-absolute" :class="navIsOpen  ? 'd-block' : 'd-none'">
             <div class="user-profile p-3 d-flex align-items-center border-bottom">
             <img src="../assets/my-img.jpeg" alt="">
             <div class="ps-5">
@@ -64,6 +64,7 @@ export default {
 <style lang="scss">
 .nav-user-content{
     width: 400px;
+    z-index: 1;
         a{
             text-decoration: none;
             color: white;

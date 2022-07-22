@@ -12,6 +12,7 @@
        <div>
            <h4>SERIE TV</h4>
            <serieCard v-for="(series, index ) in seriesTVContent" :key="index"
+            :posterPath="series.poster_path"
             :serieTitle="series.name"
             :serieOriginalTitle="series.original_name"
             :serieOriginalLanguage="series.original_language"

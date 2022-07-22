@@ -1,9 +1,12 @@
 <template>
     <div>
         <ul>
+            <li>
+                <img :src="`https://image.tmdb.org/t/p/w342${posterPath}`" alt="">
+            </li>
             <li>{{  serieTitle }}</li>
             <li>{{serieOriginalTitle}}</li>
-            <li class="img-language"><img :src="require(`../assets/flag-${visualLanguage(serieOriginalLanguage)}`)" alt=""></li>
+            <li class="img-language"><img :src="require(`../assets/flag-${visualLanguage(serieOriginalLanguage)}`)" :alt="serieOriginalLanguage"></li>
             <li>{{ serieVote }}</li>
         </ul>
     </div>
@@ -16,6 +19,7 @@ export default {
         serieTitle : String,
         serieOriginalTitle : String,
         serieOriginalLanguage: String,
+        posterPath : String,
         serieVote : [String,Number]
     },
      data : function(){

@@ -1,8 +1,8 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid px-5 py-3">
         <div >
             <h4>FILM</h4>
-            <div class="row row-cols-6 justify-content-center">
+            <div class="row row-cols-5 ">
                 <filmCard v-for="(element , index) in filmContent" :key="index"
                     :filmPoster="element.poster_path"
                     :filmTitle="element.title"
@@ -15,7 +15,7 @@
         </div>
        <div>
            <h4>SERIE TV</h4>
-           <div class="row row-cols-6 justify-content-center">
+           <div class="row row-cols-5">
                 <serieCard v-for="(series, index ) in seriesTVContent" :key="index"
                     :posterPath="series.poster_path"
                     :serieTitle="series.name"

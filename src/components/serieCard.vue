@@ -1,13 +1,23 @@
 <template>
-    <section class="m-3" :class="posterPath == null ? 'd-none' : 'd-block'">
+    <section class="p-3" :class="posterPath == null ? 'd-none' : 'd-block'">
         <div class="position-relative card-container">
-            <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342${posterPath}`" alt="">
+            <img class="img-path" :src="`https://image.tmdb.org/t/p/w342${posterPath}`" :alt="`path-${serieTitle}`">
             <div class="position-absolute top-0 card-info p-3">
-                <div> Titolo :{{  serieTitle }}</div>
-                <div>Titolo originale :{{serieOriginalTitle}}</div>
-                <div class="img-language">Lingua originale :<img :src="require(`../assets/flag-${visualLanguage(serieOriginalLanguage)}`)" :alt="serieOriginalLanguage"></div>
-                <div>Voto :{{ rating(serieVote) }}</div>
-                <div><div>Trama : {{ seriesStoryline }}</div></div>
+                <div :class="serieTitle == null ? 'd-none' : 'd-block'">
+                     Titolo :{{  serieTitle }}
+                </div>
+                <div :class="serieOriginalTitle == null ? 'd-none' : 'd-block'">
+                    Titolo originale :{{serieOriginalTitle}}
+                </div>
+                <div class="img-language">
+                    Lingua originale :<img :src="require(`../assets/flag-${visualLanguage(serieOriginalLanguage)}`)" :alt="serieOriginalLanguage">
+                </div>
+                <div :class="serieVote == 0 ? 'd-none' : 'd-block'">
+                    Voto :{{ rating(serieVote) }}
+                </div>
+                <div :class="seriesStoryline == '' ? 'd-none' : 'd-block'">
+                    Trama : {{ seriesStoryline }}
+                </div>
             </div>
         </div>
     </section>
@@ -56,10 +66,15 @@ export default {
        object-position: center;
    }
 }
+.img-path{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
 .card-info{
     width: 100%;
     height: 100%;
-    font-size: 13px;
+    font-size: 12px;
     display: none;
 }
 .card-container:hover .card-info{

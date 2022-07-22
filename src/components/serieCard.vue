@@ -1,5 +1,5 @@
 <template>
-    <section class="m-3">
+    <section class="m-3" :class="posterPath == null ? 'd-none' : 'd-block'">
         <div class="position-relative card-container">
             <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342${posterPath}`" alt="">
             <div class="position-absolute top-0 card-info p-3">

@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <headerContent @search="titleFilmSearch"/>
+    <div class="d-flex">
+    <userBar />
     <mainContent 
       :filmContent="filmContent"
       :seriesTVContent="seriesTVContent"
     />
+    </div>
   </div>
 </template>
 
 <script>
 import headerContent from './components/header.vue'
 import mainContent from './components/main.vue'
+import userBar from './components/userBar.vue'
 import axios from 'axios'
 
 
@@ -19,6 +23,7 @@ export default {
   components: {
     headerContent,
     mainContent,
+    userBar
   },
   data : function(){
       return{

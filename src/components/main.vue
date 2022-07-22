@@ -3,6 +3,7 @@
         <div>
             <h4>FILM</h4>
              <filmCard v-for="(element , index) in filmContent" :key="index"
+            :filmPoster="element.poster_path"
             :filmTitle="element.title"
             :originalTitle="element.original_title"
             :originalLanguageFilm="element.original_language"

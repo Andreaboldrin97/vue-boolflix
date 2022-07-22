@@ -35,8 +35,11 @@ export default {
                 return langauge
             }
         },
-        rating : function(vote){
-            return Math.round( vote / 2)
+            rating : function(vote){
+            let star = '⭐'
+            let ratings= Math.round( vote / 2) 
+            const stars = star.repeat(ratings)
+            return stars
         }
     }
 }

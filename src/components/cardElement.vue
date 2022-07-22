@@ -1,19 +1,19 @@
 <template>
-    <section class="p-1" :class="filmPoster == null ? 'd-none' : 'd-block'">
+    <section class="p-1" :class="cardPoster == null ? 'd-none' : 'd-block'">
             <div class="position-relative card-container">
-                <img class="img-path" :src="`https://image.tmdb.org/t/p/w342${filmPoster}`" :alt="`path-${filmTitle}`">
+                <img class="img-path" :src="`https://image.tmdb.org/t/p/w342${cardPoster}`" :alt="`path-${cardTitle}`">
                 <div class="position-absolute top-0 card-info p-3">
-                    <div :class="filmTitle == null ? 'd-none' : 'd-block'">
-                         Titolo :{{ filmTitle }}
+                    <div :class="cardTitle == null ? 'd-none' : 'd-block'">
+                         Titolo :{{ cardTitle }}
                     </div>
-                    <div :class="originalTitleFilm == null ? 'd-none' : 'd-block'"> 
-                        Titolo originale :{{ originalTitleFilm }}
+                    <div :class="originalTitle == null ? 'd-none' : 'd-block'"> 
+                        Titolo originale :{{ originalTitle }}
                     </div>
-                    <div class="img-language" :class="originalLanguageFilm == null ? 'd-none' : 'd-block'">
-                        Lingua originale :<img :src="require(`../assets/flag-${visualLanguage(originalLanguageFilm)}`)" alt="">
+                    <div class="img-language" :class="originalLanguage== null ? 'd-none' : 'd-block'">
+                        Lingua originale :<img :src="require(`../assets/flag-${visualLanguage(originalLanguage)}`)" alt="">
                     </div>
-                    <div :class="filmVote == 0 ? 'd-none' : 'd-block'">
-                        Voto : {{ rating(filmVote) }}
+                    <div :class="cardVote == 0 ? 'd-none' : 'd-block'">
+                        Voto : {{ rating(cardVote) }}
                     </div>
                     <div :class="storyline == '' ? 'd-none' : 'd-block'">
                         Trama : {{ storyline }}
@@ -27,12 +27,12 @@
 export default {
     
     props : {
-        filmTitle : String,
-        originalTitleFilm : String,
-        originalLanguageFilm : String,
-        filmPoster : String,
+        cardTitle : String,
+        originalTitle : String,
+        originalLanguage: String,
+        cardPoster : String,
         storyline : String,
-        filmVote : [String,Number],
+        cardVote : [String,Number],
     },
      data : function(){
         return{

@@ -7,7 +7,7 @@
             <li>{{  serieTitle }}</li>
             <li>{{serieOriginalTitle}}</li>
             <li class="img-language"><img :src="require(`../assets/flag-${visualLanguage(serieOriginalLanguage)}`)" :alt="serieOriginalLanguage"></li>
-            <li>{{ serieVote }}</li>
+            <li>{{ rating(serieVote) }}</li>
         </ul>
     </div>
 </template>
@@ -34,6 +34,9 @@ export default {
             }else{
                 return langauge
             }
+        },
+        rating : function(vote){
+            return Math.round( vote / 2)
         }
     }
 }

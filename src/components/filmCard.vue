@@ -7,7 +7,7 @@
             <li>{{ filmTitle }}</li>
             <li> {{ originalTitleFilm }}</li>
             <li class="img-language"><img :src="require(`../assets/flag-${visualLanguage(originalLanguageFilm)}`)" alt=""></li>
-            <li>{{ filmVote }}</li>
+            <li>{{ rating(filmVote) }}</li>
         </ul>
     </div>
 </template>
@@ -34,6 +34,9 @@ export default {
             }else{
                 return langauge
             }
+        },
+        rating : function(vote){
+            return Math.round( vote / 2)
         }
     }
 }

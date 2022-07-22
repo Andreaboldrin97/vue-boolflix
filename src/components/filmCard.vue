@@ -1,15 +1,15 @@
 <template>
-    <div>
-        <ul>
-             <li>
-                <img :src="`https://image.tmdb.org/t/p/w342${filmPoster}`" alt="">
-            </li>
-            <li>{{ filmTitle }}</li>
-            <li> {{ originalTitleFilm }}</li>
-            <li class="img-language"><img :src="require(`../assets/flag-${visualLanguage(originalLanguageFilm)}`)" alt=""></li>
-            <li>{{ rating(filmVote) }}</li>
-        </ul>
-    </div>
+    <section class="m-3">
+        <div>
+             <div>
+                <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342${filmPoster}`" alt="">
+            </div>
+            <div>{{ filmTitle }}</div>
+            <div> {{ originalTitleFilm }}</div>
+            <div class="img-language"><img :src="require(`../assets/flag-${visualLanguage(originalLanguageFilm)}`)" alt=""></div>
+            <div>{{ rating(filmVote) }}</div>
+        </div>
+    </section>
 </template>
 
 <script>

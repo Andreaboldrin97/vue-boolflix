@@ -8,7 +8,6 @@
                 </button> -->
                 <div>
                     <input class="form-control me-2" placeholder="Search" v-model.trim="searchInput" @keyup.enter="$emit('search' , searchInput)">
-                    <button @click.prevent="" class="btn btn-outline-danger">Search</button>
                 </div>
             </div>
         </nav>

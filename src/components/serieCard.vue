@@ -1,15 +1,15 @@
 <template>
-    <div>
-        <ul>
-            <li>
-                <img :src="`https://image.tmdb.org/t/p/w342${posterPath}`" alt="">
-            </li>
-            <li>{{  serieTitle }}</li>
-            <li>{{serieOriginalTitle}}</li>
-            <li class="img-language"><img :src="require(`../assets/flag-${visualLanguage(serieOriginalLanguage)}`)" :alt="serieOriginalLanguage"></li>
-            <li>{{ rating(serieVote) }}</li>
-        </ul>
-    </div>
+    <section class="m-3">
+        <div>
+            <div>
+                <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342${posterPath}`" alt="">
+            </div>
+            <div>{{  serieTitle }}</div>
+            <div>{{serieOriginalTitle}}</div>
+            <div class="img-language"><img :src="require(`../assets/flag-${visualLanguage(serieOriginalLanguage)}`)" :alt="serieOriginalLanguage"></div>
+            <div>{{ rating(serieVote) }}</div>
+        </div>
+    </section>
 </template>
 
 <script>

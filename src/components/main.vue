@@ -1,7 +1,8 @@
 <template>
     <main class="container-fluid px-5 py-3 container-posters" @mouseover="$emit('isNavOpen' , false)">
         <div>
-            <h4 class="text-white py-3" v-if="filmContent != '' ? 'd-block' : ''">LISTA DEI FILM</h4>
+            <h4 class="text-white py-3" v-if="filmContent.length > 0">LISTA DEI FILM</h4>
+            <h4 v-else> Non sono stati trovati film</h4>
             <div class="row row-cols-3 row-cols-lg-5">
                 <cardElement v-for="element in filmContent" :key="element.id"
                     :cardPoster="element.poster_path"
@@ -14,7 +15,8 @@
             </div>
         </div>
        <div>
-           <h4 class="text-white py-3" v-if="seriesTVContent != '' ? 'd-block' : ''">LISTA DELLE SERIE TV</h4>
+           <h4 class="text-white py-3" v-if="seriesTVContent.length > 0">LISTA DELLE SERIE TV</h4>
+           <h4 v-else> Non sono state trovate serie TV</h4>
            <div class="row row-cols-3 row-cols-lg-5 ">
                 <cardElement v-for="series in seriesTVContent" :key="series.id"
                     :cardPoster="series.poster_path"

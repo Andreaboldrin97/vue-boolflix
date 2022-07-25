@@ -41,7 +41,14 @@ export default {
   },
   methods : {
        getFilm : function(){
-            axios.get(`${this.apiLink}${this.movie}${this.apiKey}${this.titleSearch}`)
+         const parameters = {
+           movie : this.movie,
+           apiKey : this.apiKey,
+           serach : this.titleSearch
+         }
+         console.log(this.apiLink + {parameters})
+
+            axios.get(this.apiLink + {parameters})
             .then((element) =>{
               this.filmContent = element.data.results
             
@@ -76,6 +83,7 @@ export default {
 
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap.scss";
+
 //? usato la cdn per problemi nel verificamento delle icon
 // @import "~font-awesome/css/font-awesome.css";
 

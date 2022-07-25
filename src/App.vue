@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <headerContent @search="titleFilmSearch" @isNavOpen="openNav"/>
+    <headerContent @search="titleSearch" @isNavOpen="openNav"/>
     <div class="d-flex">
     <userBar :navIsOpen="navIsOpen"/>
     <mainContent @isNavOpen="openNav"
@@ -60,7 +60,7 @@ export default {
               console.warn(error)
             })
        },
-       titleFilmSearch : function(needle){
+       titleSearch : function(needle){
          console.log(needle)
          this.titleSearch = `&query=${needle}`;
          this.getFilm();

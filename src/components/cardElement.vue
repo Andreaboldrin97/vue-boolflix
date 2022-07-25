@@ -70,7 +70,7 @@ export default {
 }
 .img-path{
     width: 100%;
-    height: 400px;
+    min-height: 400px;
     object-fit: cover;
 }
 .card-info{

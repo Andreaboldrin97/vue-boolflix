@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="p-3 border-bottom">
-            <a href="#">I miei dowload</a>
+            <a href="#"><i class="fa-solid fa-download pe-2"></i> I miei dowload</a>
         </div>
         <div class="p-3 listFilter" >
             <div class="py-2" v-for="(element, index) in listUserFilter " :key="index">

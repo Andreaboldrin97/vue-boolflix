@@ -18,6 +18,9 @@
                     <div :class="storyline == '' ? 'd-none' : 'd-block'">
                         Trama : {{ storyline }}
                     </div>
+                    <div>
+                       <i class="fas fa-star"></i>
+                    </div>
                 </div>
             </div>
     </section>
@@ -58,6 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .img-language{
    img{
        width: 20px;

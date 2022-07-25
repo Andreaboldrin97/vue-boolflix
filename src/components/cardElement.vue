@@ -13,7 +13,7 @@
                         Lingua originale :<img :src="require(`../assets/flag-${visualLanguage(originalLanguage)}`)" alt="">
                     </div>
                     <div :class="cardVote == 0 ? 'd-none' : 'd-block'">
-                        Voto : {{ rating(cardVote) }}
+                        Voto : {{ rating(cardVote) }} 
                     </div>
                     <div :class="storyline == '' ? 'd-none' : 'd-block'">
                         Trama : {{ storyline }}
@@ -49,7 +49,7 @@ export default {
         },
             rating : function(vote){
             let star = '⭐'
-            let ratings= Math.round( vote / 2) 
+            let ratings= Math.ceil( vote / 2) 
             const stars = star.repeat(ratings)
             return stars
         }

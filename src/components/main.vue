@@ -3,7 +3,7 @@
         <div>
             <h4 class="text-white py-3" v-if="filmContent != '' ? 'd-block' : ''">LISTA DEI FILM</h4>
             <div class="row row-cols-5 ">
-                <cardElement v-for="(element , index) in filmContent" :key="index"
+                <cardElement v-for="element in filmContent" :key="element.id"
                     :cardPoster="element.poster_path"
                     :cardTitle="element.title"
                     :originalTitle="element.original_title"
@@ -16,7 +16,7 @@
        <div>
            <h4 class="text-white py-3" v-if="seriesTVContent != '' ? 'd-block' : ''">LISTA DELLE SERIE TV</h4>
            <div class="row row-cols-5">
-                <cardElement v-for="(series, index ) in seriesTVContent" :key="index"
+                <cardElement v-for="series in seriesTVContent" :key="series.id"
                     :cardPoster="series.poster_path"
                     :cardTitle="series.name"
                     :originalTitle="series.original_name"

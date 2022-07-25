@@ -79,7 +79,7 @@ export default {
 .card-info{
     width: 100%;
     height: 100%;
-    font-size: 12px;
+    font-size: 8px;
     display: none;
 }
 .card-container:hover .card-info{

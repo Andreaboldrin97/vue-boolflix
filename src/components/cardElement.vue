@@ -1,5 +1,5 @@
 <template>
-    <section class="p-1" :class="cardPoster == null ? 'd-none' : 'd-block'">
+    <section class="p-1 " :class="cardPoster == null ? 'd-none' : 'd-block'">
             <div class="position-relative card-container">
                 <img class="img-path" :src="`https://image.tmdb.org/t/p/w342${cardPoster}`" :alt="`path-${cardTitle}`">
                 <div class="position-absolute top-0 card-info p-3">
@@ -73,6 +73,9 @@ export default {
     min-height: 400px;
     object-fit: cover;
 }
+.card-container{
+    transform: 1s;
+}
 .card-info{
     width: 100%;
     height: 100%;
@@ -83,6 +86,10 @@ export default {
     display: block;
     background-color: black;
     color: white;
+    border: 2px solid red;
+    border-radius: 20px;
+   transform: scale(1.2);
+   z-index: 2;
 }
 
 

@@ -13,7 +13,8 @@
                         Lingua originale :<img :src="require(`../assets/flag-${visualLanguage(originalLanguage)}`)" alt="">
                     </div>
                     <div :class="cardVote == 0 ? 'd-none' : 'd-block'">
-                        Voto : {{ rating(cardVote) }} 
+                        Voto :  
+                        <i v-for="n in 5" :key="n" class="far fa-star text-warning" :class=" n <= rating(cardVote) ? 'fas' : 'far' "></i>
                     </div>
                     <div :class="storyline == '' ? 'd-none' : 'd-block'">
                         Trama : {{ storyline }}
@@ -48,10 +49,11 @@ export default {
             }
         },
             rating : function(vote){
-            let star = '⭐'
-            let ratings= Math.ceil( vote / 2) 
-            const stars = star.repeat(ratings)
-            return stars
+            // let star = '⭐'
+            // let ratings= Math.ceil( vote / 2) 
+            // const stars = star.repeat(ratings)
+            // return stars 
+            return Math.ceil( vote / 2)
         }
     }
 }

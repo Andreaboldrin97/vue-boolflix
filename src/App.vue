@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <headerContent @search="titleSearch" @isNavOpen="openNav"/>
+    <headerContent @search="searchPoster" @isNavOpen="openNav"/>
     <div class="d-flex">
     <userBar :navIsOpen="navIsOpen"/>
     <mainContent @isNavOpen="openNav"
@@ -60,7 +60,7 @@ export default {
               console.warn(error)
             })
        },
-       titleSearch : function(needle){
+       searchPoster : function(needle){
          console.log(needle)
          this.titleSearch = `&query=${needle}`;
          this.getFilm();
@@ -75,7 +75,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~/node_modules/bootstrap/scss/bootstrap.scss";
-@import "~/node_modules/font-awesome/scss/font-awesome.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~font-awesome/css/font-awesome.css";
 
 </style>

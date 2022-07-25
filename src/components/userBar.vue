@@ -79,6 +79,7 @@ export default {
     }
 }
 .listFilter{
+    cursor: pointer;
     height: calc(100vh - 238px);
     overflow: auto;
 }

@@ -76,6 +76,7 @@ export default {
 
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap.scss";
-@import "~font-awesome/css/font-awesome.css";
+//? usato la cdn per problemi nel verificamento delle icon
+// @import "~font-awesome/css/font-awesome.css";
 
 </style>

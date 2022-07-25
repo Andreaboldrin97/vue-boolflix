@@ -27,10 +27,8 @@ export default {
   },
   data : function(){
       return{
-          apiKey : '?api_key=3b41601b192f01bf36adb6163387f7eb',
+          apiKey : '3b41601b192f01bf36adb6163387f7eb',
           apiLink : 'https://api.themoviedb.org/3/search/',
-          movie : 'movie',
-          seriesTv : 'tv',
           titleSearch : '',
           filmContent : [],
           seriesTVContent : [],
@@ -41,14 +39,8 @@ export default {
   },
   methods : {
        getFilm : function(){
-         const parameters = {
-           movie : this.movie,
-           apiKey : this.apiKey,
-           serach : this.titleSearch
-         }
-         console.log(this.apiLink + {parameters})
 
-            axios.get(this.apiLink + {parameters})
+            axios.get(this.apiLink + 'movie', {params: {api_key : this.apiKey, query: this.titleSearch}})
             .then((element) =>{
               this.filmContent = element.data.results
             
@@ -58,7 +50,11 @@ export default {
             })
        },
        getSerie : function(){
-            axios.get(`${this.apiLink}${this.seriesTv}${this.apiKey}${this.titleSearch}`)
+          const parameters= {
+           api_key : this.apiKey,
+           query: this.titleSearch
+         }
+            axios.get(this.apiLink + 'tv',{params:parameters})
             .then((element) =>{
               this.seriesTVContent = element.data.results
             
@@ -69,10 +65,10 @@ export default {
        },
        searchPoster : function(needle){
          console.log(needle)
-         this.titleSearch = `&query=${needle}`;
+         this.titleSearch = needle;
          this.getFilm();
          this.getSerie()
-         console.log(`${this.apiLink}${this.seriesTv}${this.apiKey}${this.titleSearch}`)
+         
        },
        openNav : function(needle){
          return this.navIsOpen = needle
